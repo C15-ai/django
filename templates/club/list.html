@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Clubs</title>
+</head>
+<body>
+     {% extends 'base.html' %}
+
+{% block title %}
+    club list
+{% endblock %}
+
+{% block main %}
+
+    <h1>⚽ Clubs List Page</h1>
+    <a href="{% url 'club_create' %}">
+        <button class="btn btn-primary">create</button>
+    </a>
+    <div class="clubs">
+        {% for club in clubs %}
+            <div class="club-card" style="margin-bottom:20px; border:1px solid #ccc; padding:10px;">
+
+                <form action="{% url 'club_delete' club.id %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">delete</button>
+                </form>
+                <a href="{% url 'club_update' club.id %}">
+                    <button class="btn btn-warning">update</button>
+                </a>
+
+
+                <h2>{{ club.title }}</h2>
+                <p>{{ club.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+</body>
+</html>

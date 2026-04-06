@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    create
+{% endblock %}
+
+{% block main %}
+    <h1>⚽ CLUB CREATE</h1>
+
+    <form method="post" action="{% url 'club_create' %}">
+        {% csrf_token %}
+
+        <label for="name">Club name:</label>
+        <input type="text" name="name" placeholder="club nomi ..." required> <br><br>
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" placeholder="club haqida ..." required><br><br>
+
+        <label for="founded_year">Founded year:</label>
+        <input type="number" name="founded_year" placeholder="tashkil topgan yil ..." required> <br><br>
+
+        <button>Save</button>
+
+        <a href="{% url 'club_list' %}">
+            back
+        </a>
+    </form>
+
+{% endblock %}

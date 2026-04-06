@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    edit
+{% endblock %}
+
+{% block main %}.
+    <h1>Club Edit</h1>
+    <form method="post" action="{% url 'club_update' club.id %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Club nomi ..." required value="{{ club.name}}"> <br> <br>
+        <label for="description">Description:</label>
+        <input type="text" name="description" placeholder="club haqida ..." required value="{{ club.description }}"><br>
+        <br>
+        <label for="founded_year">Price:</label>
+        <input type="number" name="founded_year" placeholder="tashkil topgan yili ..." required value="{{ club.founded_year }}"> <br><br>
+        <button>Save</button>
+        <a href="{% url 'club_list' %}">
+            back</a>
+    </form>
+
+
+
+{% endblock %}

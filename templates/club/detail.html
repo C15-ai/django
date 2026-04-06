@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>club_detail</title>
+</head>
+<body>
+      <h1>{{club.name}}</h1>
+      <p>{{club.description}}</p>
+      <p>Founded: {{club.founded_year}}</p>
+      <a href="{% url 'club_list' %}">back</a>
+</body>
+</html>
