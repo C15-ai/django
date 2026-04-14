@@ -45,7 +45,14 @@ INSTALLED_APPS = [
     "books.apps.BooksConfig",
 
     # homework
-    "club"
+    "club",
+
+    # test
+    "post",
+
+    # test2
+    "product"
+
 
 ]
 

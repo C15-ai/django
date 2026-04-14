@@ -48,7 +48,8 @@ def home(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('book/',include('books.urls')),
-    path('club/', include('club.urls')),
+    # path('club/', include('club.urls')),
+    path('club/', include('product.urls')),
     path('', home),
 ]
 

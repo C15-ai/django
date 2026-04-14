@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    product list
+{% endblock %}
+
+{% block main %}
+
+<h1>Product List</h1>
+
+<a href="{% url 'product_create' %}">
+    <button class="btn btn-primary">create</button>
+</a>
+
+<div class="products">
+    {% for product in products %}
+        <div class="product-card" style="margin-bottom:20px; border:1px solid #ccc; padding:10px;">
+
+            <a href="{% url 'product_update' product.id %}">
+                <button class="btn btn-warning">update</button>
+            </a>
+
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>{{ product.price }}</p>
+
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

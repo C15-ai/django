@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    create
+{% endblock %}
+
+{% block main %}
+    <h1>Product CREATE</h1>
+
+    <form method="post" action="{% url 'product_create' %}">
+        {% csrf_token %}
+
+        <label for="name">Product name:</label>
+        <input type="text" name="name" placeholder="Mahsulot nomi ..." required> <br><br>
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" placeholder="Mahsulot haqida ..." required><br><br>
+
+        <label for="founded_year">Price:</label>
+        <input type="number" name="price" placeholder="Narxi ..." required> <br><br>
+
+        <button>Save</button>
+
+        <a href="{% url 'product_list' %}">
+            back
+        </a>
+    </form>
+
+{% endblock %}
