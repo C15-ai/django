@@ -59,6 +59,9 @@ INSTALLED_APPS = [
     # homework 2
     "country",
 
+    # homework 3
+    "car"
+
 
 ]
 

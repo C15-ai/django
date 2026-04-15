@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    create
+{% endblock %}
+
+{% block main %}
+    <h1>Car Create</h1>
+
+    <form method="post" action="{% url 'car_create' %}">
+        {% csrf_token %}
+
+        {#<label for="brand">Country Name :</label>#}
+        {#<input type="text" name="brand" placeholder=" Mashina Brendi ..." required> <br><br>#}
+
+        {#<label for="model">Population:</label>#}
+        {#<input type="text" name="model" placeholder="Mashina Modeli..." required><br><br>#}
+
+        {#<label for="year">Year:</label>#}
+        {#<input type="number" name="year" placeholder="Mashina Yili..." required><br><br>#}
+
+
+        {{form.as_p}}
+
+        <button>Save</button>
+
+        <a href="{% url 'car_list' %}">
+            back
+        </a>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    edit
+{% endblock %}
+
+{% block main %}.
+    <h1>Car Edit</h1>
+    <form method="post" action="{% url 'car_update' cars.id %}">
+        {% csrf_token %}
+        {#        <label for="brand">Car Brand:</label>#}
+        {#        <input type="text" name="brand" placeholder="Mashina Brandi..." required value={{ car.brand }}> <br> <br>#}
+        {#        <label for="model">Model:</label>#}
+        {#        <input type="text" name="population" placeholder="Mashina Modeli..." required value={{ car.model }}><br>#}
+        {#        <label for="year">Year:</label>#}
+        {#        <input type="number" name="year" placeholder="Mashina Yili..." required value={{ car.year }}><br>#}
+        {#        <br>#}
+
+        {{ form.as_p }}
+        <button>edit</button>
+        <a href="{% url 'car_list' %}">
+            back</a>
+    </form>
+
+
+
+{% endblock %}
