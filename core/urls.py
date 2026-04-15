@@ -51,8 +51,8 @@ urlpatterns = [
     # path('club/', include('club.urls')),
     # path('club/', include('product.urls')),
     path('category/', include('category.urls')),
-    # path('country/', include('country.urls')),
-    #path('car/', include('car.urls')),
+    path('country/', include('country.urls')),
+    path('car/', include('car.urls')),
     path('', home),
 ]
 
