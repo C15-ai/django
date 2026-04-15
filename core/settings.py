@@ -51,7 +51,13 @@ INSTALLED_APPS = [
     "post",
 
     # test2
-    "product"
+    "product",
+    
+    # homework 1
+    "category",
+
+    # homework 2
+    "country",
 
 
 ]

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    category list
+{% endblock %}
+
+{% block main %}
+
+<h1>Category List</h1>
+
+<a href="{% url 'category_create' %}">
+    <button class="btn btn-primary">create</button>
+</a>
+
+<div class="categories">
+    {% for category in categories %}
+        <div class="category-card" style="margin-bottom:20px; border:1px solid #ccc; padding:10px;">
+
+            <form action="{% url 'category_delete' category.id %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">delete</button>
+            </form>
+            <a href="{% url 'category_update' category.id %}">
+                <button class="btn btn-warning">update</button>
+            </a>
+
+            <h2>{{ category.name }}</h2>
+            <p>{{ category.year }}</p>
+
+
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

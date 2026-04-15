@@ -49,7 +49,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('book/',include('books.urls')),
     # path('club/', include('club.urls')),
-    path('club/', include('product.urls')),
+    # path('club/', include('product.urls')),
+    #path('category/', include('category.urls')),
+    path('country/', include('country.urls')),
     path('', home),
 ]
 

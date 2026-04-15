@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    edit
+{% endblock %}
+
+{% block main %}.
+    <h1>Category Edit</h1>
+    <form method="post" action="{% url 'category_update' category.id %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Mahsulot nomi ..." required value="{{ category.name}}"> <br> <br>
+        <label for="year">year:</label>
+        <input type="number" name="year" placeholder="Mahsulot yili ..." required value="{{ category.year }}"><br>
+        <br>
+
+        <button>Save</button>
+        <a href="{% url 'category_list' %}">
+            back</a>
+    </form>
+
+
+
+{% endblock %}
