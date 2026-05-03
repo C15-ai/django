@@ -51,8 +51,10 @@ urlpatterns = [
     # path('club/', include('club.urls')),
     # path('club/', include('product.urls')),
     #path('category/', include('category.urls')),
-    path('order/', include('order.urls')),
-    path('accounts/', include('accounts.urls')),
+    # path('order/', include('order.urls')),
+    # path('accounts/', include('accounts.urls')),
+    path('post/', include('post.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 
     #path('car/', include('car.urls')),
     path('', home),

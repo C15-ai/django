@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post Detail</title>
+</head>
+<body>
+
+<h1>{{ posts.title }}</h1>
+<p>{{ posts.content }}</p>
+<p><b>Author:</b> {{ posts.author }}</p>
+<p><b>Created:</b> {{ posts.created_at }}</p>
+
+<hr>
+
+<h2>Kommentlar</h2>
+
+{% for comment in posts.comment_set.all %}
+    <div style="border:1px solid #aaa; margin:5px; padding:5px;">
+        <b>{{ comment.author }}</b>
+        <p>{{ comment.content }}</p>
+    </div>
+{% empty %}
+    <p>Comment yo‘q</p>
+{% endfor %}
+
+<hr>
+
+{% if user.is_authenticated %}
+    <h3>Comment qo‘shish</h3>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="{% url 'add_comment' posts.id %}">
+        {% csrf_token %}
+        <textarea name="content"></textarea><br><br>
+        <button type="submit">Yuborish</button>
+    </form>
+{% else %}
+    <p>Komment yozish uchun login qiling</p>
+{% endif %}
+
+<br>
+<a href="{% url 'post_list' %}">⬅️ Orqaga</a>
+
+</body>
+</html>

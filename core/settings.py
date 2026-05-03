@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     "club",
 
     # test
-    "post",
+
 
     # test2
     "product",
@@ -65,7 +65,9 @@ INSTALLED_APPS = [
     # register
 
     "order",
-
+    # oylik test
+    "post",
+    "comment",
 
 
 

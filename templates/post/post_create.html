@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Post</title>
+</head>
+<body>
+
+<h1>Post qoshish</h1>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Title:</label><br>
+    <input type="text" name="title"><br><br>
+
+    <label>Content:</label><br>
+    <textarea name="content"></textarea><br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+<br>
+<a href="{% url 'post_list' %}">⬅️ Orqaga</a>
+
+</body>
+</html>
