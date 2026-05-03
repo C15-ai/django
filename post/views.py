@@ -29,20 +29,20 @@ def post_detail(request, id):
     return render(request, 'post/post_detail.html', {"posts": post})
 
 @login_required
-def post_delete(request , pk=None):
-    p1 = Post.objects.filter(id=pk).first()
+def post_delete(request , id):
+    p1 = Post.objects.filter(id=id).first()
     p1.delete()
     return redirect('post_list')
 
 @login_required
-def add_comment(request,id):
+def add_comment(request, id):
     post = get_object_or_404(Post, id=id)
     if request.method == "POST":
         content = request.POST.get("content")
         if content:
-            Comment.objects.create(post=post,author=request.user,content=content)
+            Comment.objects.create(post=post, user=request.user, text=content)
             return redirect('post_detail', id=id)
         else:
-            error = "Comment yozish majburiy"
-            return render(request, "post/post_detail.html", {"posts": post,"error": error})
+            error = "Comment yozish kerak"
+            return render(request, "post/post_detail.html", {"posts": post, "error": error})
     return redirect('post_detail', id=id)

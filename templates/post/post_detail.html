@@ -16,13 +16,14 @@
 
 {% for comment in posts.comment_set.all %}
     <div style="border:1px solid #aaa; margin:5px; padding:5px;">
-        <b>{{ comment.author }}</b>
-        <p>{{ comment.content }}</p>
+        <b>{{ comment.user.username }}</b>
+        <p>{{ comment.text }}</p>
+
+        <small>{{ comment.created_at }}</small>
     </div>
 {% empty %}
     <p>Comment yo‘q</p>
 {% endfor %}
-
 <hr>
 
 {% if user.is_authenticated %}
