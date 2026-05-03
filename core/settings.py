@@ -60,7 +60,15 @@ INSTALLED_APPS = [
     "country",
 
     # homework 3
-    "car"
+    "car",
+    
+    # register
+
+    "order",
+
+
+
+
 
 
 ]

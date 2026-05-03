@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block main %}
-    <h1>Fighter Create</h1>
+    <h1>Order Create</h1>
 
-    <form method="post" action="{% url 'country_create' %}">
+    <form method="post" action="{% url 'order_create' %}">
         {% csrf_token %}
 
         {#<label for="name">Country Name :</label>#}

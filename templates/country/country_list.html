@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    country list
+    order list
 {% endblock %}
 
 {% block main %}
 
-<h1>Country List</h1>
+<h1>Order List</h1>
 
-<a href="{% url 'country_create' %}">
+<a href="{% url 'order_create' %}">
     <button class="btn btn-primary">create</button>
 </a>
 
 <div class="categories">
-    {% for country in countries %}
+    {% for order in orders %}
         <div class="category-card" style="margin-bottom:20px; border:1px solid #ccc; padding:10px;">
 
-            <form action="{% url 'country_delete' country.id %}" method="post" style="display:inline;">
+            <form action="{% url 'order_delete' order.id %}" method="post" style="display:inline;">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-danger">delete</button>
             </form>
-            <a href="{% url 'country_update' country.id %}">
+            <a href="{% url 'order_update' order.id %}">
                 <button class="btn btn-warning">update</button>
             </a>
 
-            <h2>{{ country.name }}</h2>
-            <p>{{ country.population }}</p>
+            <h2>{{ order.customer_name }}</h2>
+            <p>{{ order.product_name }}</p>
+            <p>{{order.quantity}}</p>
 
 
         </div>

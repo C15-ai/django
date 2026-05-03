@@ -50,9 +50,11 @@ urlpatterns = [
     #path('book/',include('books.urls')),
     # path('club/', include('club.urls')),
     # path('club/', include('product.urls')),
-    path('category/', include('category.urls')),
-    path('country/', include('country.urls')),
-    path('car/', include('car.urls')),
+    #path('category/', include('category.urls')),
+    path('order/', include('order.urls')),
+    path('accounts/', include('accounts.urls')),
+
+    #path('car/', include('car.urls')),
     path('', home),
 ]
 
